@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "71d40126-39f8-4d52-98fb-febc6c427b4c",
+		"name": "Stepik v1.3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23964953"
+	},
+	"item": [
+		{
+			"name": "https://postman-echo.com/get?param={{count}}/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.has(\"count\");\r",
+							"pm.collectionVariables.get(\"count\");\r",
+							"pm.collectionVariables.set(\"count\", 3);\r",
+							"pm.collectionVariables.unset(\"count\");\r",
+							"pm.collectionVariables.replaceIn(\"Count = {{count}}\");\r",
+							"pm.collectionVariables.clear();"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?param={{count}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "param",
+							"value": "{{count}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/get?param={{count}}/2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.has(\"count\");\r",
+							"pm.environment.get(\"count\");\r",
+							"pm.environment.set(\"count\", 3);\r",
+							"pm.environment.unset(\"count\");\r",
+							"pm.environment.replaceIn(\"Count = {{count}}\");\r",
+							"pm.environment.clear();"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?param={{count}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "param",
+							"value": "{{count}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/get?param={{count}}/3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.iterationData.has(\"count\");\r",
+							"pm.iterationData.get(\"count\");\r",
+							"pm.iterationData.unset(\"count\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?param={{count}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "param",
+							"value": "{{count}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/get?param={{count}}/4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(\"(Global) count = \" + pm.globals.get(\"count\"))\r",
+							"console.log(\"(Collection) count = \" + pm.collectionVariables.get(\"count\"))\r",
+							"console.log(\"(Environment) count = \" + pm.environment.get(\"count\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?param={{count}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "param",
+							"value": "{{count}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/get?param={{count}}/5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.variables.has(\"count\")\r",
+							"pm.variables.get(\"count\")\r",
+							"pm.variables.set(\"count\", 3)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?param={{count}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "param",
+							"value": "{{count}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/get?param={{count}}/6",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(\"(Local, before change) count = \" + pm.variables.get(\"count\"))\r",
+							"pm.variables.set(\"count\", 18);\r",
+							"console.log(\"(Local, after change) count = \" + pm.variables.get(\"count\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?param={{count}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "param",
+							"value": "{{count}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "count",
+			"value": "10",
+			"type": "default"
+		}
+	]
+}

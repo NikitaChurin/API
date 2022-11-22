@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "2baa9d0f-774d-476d-8a6e-88bdb1dd1201",
+		"name": "Scripts demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23964953"
+	},
+	"item": [
+		{
+			"name": "https://postman-echo.com/post?name=Anna",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"param\", JSON.parse(responseBody).args.name)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/post?name=Anna",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Anna"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/get?param={{param}}",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var paramValue = pm.collectionVariables.get(\"param\")\r",
+							"pm.collectionVariables.set(\"param\", paramValue + \"_pre_req\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?param={{param}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "param",
+							"value": "{{param}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "param",
+			"value": "default",
+			"type": "string"
+		}
+	]
+}

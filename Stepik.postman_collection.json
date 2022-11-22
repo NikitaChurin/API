@@ -1,0 +1,540 @@
+{
+	"info": {
+		"_postman_id": "9aa03aed-e2eb-47af-8d62-cfa1a1b2d448",
+		"name": "Stepik",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23964953"
+	},
+	"item": [
+		{
+			"name": "Anna",
+			"item": [
+				{
+					"name": "Anna",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.log(\"Pre rec - request\")"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"Tests - request\")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://postman-echo.com/post?name=Anna",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"post"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Anna"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"console.log(\"Pre rec - folder\")"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"console.log(\"Tests - folder\")"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "https://postman-echo.com/get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/delay/:delay?=2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/delay/:delay?=2",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"delay",
+						":delay"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": "2"
+						}
+					],
+					"variable": [
+						{
+							"key": "delay",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/post?name=Anna",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/post?name=Anna",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Anna"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/post?name=Maria",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/post?name=Maria",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Maria"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/post?name={{name}}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/post?name={{name}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "{{name}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}post?name={{name}}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}post?name={{name}}",
+					"host": [
+						"{{url}}post"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "{{name}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/get?param1=value1&param2=value2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?param1=value1&param2=value2",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "param1",
+							"value": "value1"
+						},
+						{
+							"key": "param2",
+							"value": "value2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/post?name",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Maria",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "Ivanova",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://postman-echo.com/post?name",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/post?name/1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"type": "file",
+							"src": "/C:/Users/Asus/OneDrive/Рабочий стол/file.json"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://postman-echo.com/post?name",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Maria\",\r\n    \"surname\": \"Ivanova\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://postman-echo.com/put",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"put"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/patch",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Maria\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://postman-echo.com/patch",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"patch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "custom-headers",
+						"value": "12",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://postman-echo.com/delete",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://yandex.ru/unknown.html",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://yandex.ru/unknown.html",
+					"protocol": "https",
+					"host": [
+						"yandex",
+						"ru"
+					],
+					"path": [
+						"unknown.html"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/post?name={{Hup}}",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/post?name={{Hup}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "{{Hup}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/post?pvd={{$randomPassword}}:&time={{$timestamp}}:&val={{$randomInt}}:",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/post?pvd={{$randomPassword}}:&time={{$timestamp}}:&val={{$randomInt}}:",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "pvd",
+							"value": "{{$randomPassword}}:"
+						},
+						{
+							"key": "time",
+							"value": "{{$timestamp}}:"
+						},
+						{
+							"key": "val",
+							"value": "{{$randomInt}}:"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/get?param={{param}}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?param={{param}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "param",
+							"value": "{{param}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"Pre rec - collection\")"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"Tests - collection\")"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "param ",
+			"value": "collection",
+			"type": "string"
+		}
+	]
+}

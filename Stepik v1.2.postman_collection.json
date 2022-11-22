@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "7933878b-ffa0-460c-b3ad-f05f78b375ff",
+		"name": "Stepik v1.2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23964953"
+	},
+	"item": [
+		{
+			"name": "https://postman-echo.com/get?param={{count}}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(pm.globals.replaceIn(\"Global variable count = {{count}}\"));\r",
+							"console.log(\"Global variable count2 = \" + pm.globals.get(\"count2\"));\r",
+							"\r",
+							"pm.globals.set(\"count\", 3)\r",
+							"pm.globals.set(\"count2\", 3)\r",
+							"\r",
+							"console.log(pm.globals.replaceIn(\"Global variable count = {{count}}\"));\r",
+							"console.log(pm.globals.replaceIn(\"Global variable count2 = {{count2}}\"));\r",
+							"\r",
+							"pm.globals.unset(\"count2\")\r",
+							"console.log(\"Global variable count2 = \" + pm.globals.get(\"count2\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?param={{count}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "param",
+							"value": "{{count}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "count",
+			"value": "10",
+			"type": "default"
+		}
+	]
+}

@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "325a1fe2-9cb2-46f1-abeb-0b6ee8c9e9a5",
+		"name": "Stepik v1.4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23964953"
+	},
+	"item": [
+		{
+			"name": "https://postman-echo.com/post/1",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.log(\"Request method : \" + pm.request.method);\r",
+							"console.log(\"Request url : \" + pm.request.url);\r",
+							"console.log(\"Request headers : \" + pm.request.headers);\r",
+							"console.log(\"Request body : \" + pm.request.body);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"var\": \"value\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://postman-echo.com/post",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/post/2",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.request.headers.add({\r",
+							"  key: \"custom-header3\",\r",
+							"  value: \"custom-value3\"\r",
+							"});\r",
+							"pm.request.headers.remove(\"custom-header1\");\r",
+							"pm.request.headers.upsert({\r",
+							"  key: \"custom-header2\",\r",
+							"  value: \"custom-value4\"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "custom-header1",
+						"value": "custom-value1",
+						"type": "text"
+					},
+					{
+						"key": "custom-header2",
+						"value": "custom-value2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://postman-echo.com/post",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/post?param1=value1&param2=value2/1",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.request.addQueryParams(\"param3=value3\");\r",
+							"pm.request.removeQueryParams(\"param1\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/post?param1=value1&param2=value2",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "param1",
+							"value": "value1"
+						},
+						{
+							"key": "param2",
+							"value": "value2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/post?param1=value1&param2=value2/2",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(\"Code: \" + pm.response.code);\r",
+							"console.log(\"Status: \" + pm.response.status);\r",
+							"console.log(\"Time: \" + pm.response.responseTime);\r",
+							"console.log(\"Size: \" + pm.response.responseSize);\r",
+							"console.log(\"Headers: \" + pm.response.headers);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/post?param1=value1&param2=value2",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "param1",
+							"value": "value1"
+						},
+						{
+							"key": "param2",
+							"value": "value2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://postman-echo.com/post?param1=value1&param2=value2/3",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(pm.cookies.has(\"sails.sid\"));\r",
+							"console.log(pm.cookies.has(\"sails.sid2\"));\r",
+							"\r",
+							"console.log(pm.cookies.get(\"sails.sid\"));\r",
+							"console.log(pm.cookies.get(\"sails.sid2\"));\r",
+							"\r",
+							"console.log(pm.cookies.toObject());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/post?param1=value1&param2=value2",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "param1",
+							"value": "value1"
+						},
+						{
+							"key": "param2",
+							"value": "value2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
